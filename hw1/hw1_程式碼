@@ -1,0 +1,27 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Homework_1 {
+
+    public static void main(String[] args) {
+        // 1. 直接建立 JFrame 視窗物件
+        JFrame frame = new JFrame("骰子模擬器");
+        frame.setSize(400, 320);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setLayout(new BorderLayout());
+
+        // 2. 直接建立並設定 JLabel 標籤
+        JLabel diceLabel = new JLabel("?", SwingConstants.CENTER);
+        diceLabel.setFont(new Font("Dialog", Font.BOLD, 60));
+        frame.add(diceLabel, BorderLayout.CENTER);
+
+        // 3. 直接建立並設定 JButton 按鈕
+        JButton rollButton = new JButton("擲骰子");
+        rollButton.setFont(new Font("Dialog", Font.PLAIN, 24));
+        frame.add(rollButton, BorderLayout.SOUTH);
+
+        // 4. 顯示視窗
+        frame.setVisible(true);
+    }
+}
