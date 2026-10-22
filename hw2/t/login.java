@@ -1,0 +1,55 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class login extends JFrame {
+
+    public login() {
+        setTitle("登入視窗");
+        setSize(350, 250);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        setLayout(new GridLayout(3, 2, 10, 10));
+
+        // 帳號
+        JLabel l1 = new JLabel("帳號：");
+        JTextField t1 = new JTextField();
+
+        // 密碼
+        JLabel l2 = new JLabel("密碼：");
+        JPasswordField t2 = new JPasswordField();
+
+        // 登入按鈕
+        JButton btn = new JButton("登入");
+
+        add(l1);
+        add(t1);
+        add(l2);
+        add(t2);
+        add(new JLabel(""));
+        add(btn);
+
+        // 按下登入按鈕
+        btn.addActionListener(e -> {
+            String account = t1.getText();
+            String password = new String(t2.getPassword());
+
+            if (account.equals("admin") &&
+                password.equals("1234")) {
+
+                JOptionPane.showMessageDialog(
+                    this, "登入成功！");
+
+            } else {
+                JOptionPane.showMessageDialog(
+                    this, "帳號或密碼錯誤！");
+            }
+        });
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new login();
+    }
+}
